@@ -1,0 +1,19 @@
+---
+layout: ../../layouts/post.astro
+title: "My take on c0 Compiler"
+pubDate: 2024-08-20
+description: "My take on the c0 compiler"
+author: "karanprs"
+excerpt: In this post, I reflect on one of the most rigorous course-based projects I completed during my master's study in CMU, the challenges I faced and the key takeaways.
+image:
+  src:
+  alt:
+tags: ["project", "compiler", "rust"]
+---
+
+The compiler I am built during the second semester of my master's program is one of the most involved projects I have worked on - and not only because the specification was open to a plethora of design choices (which stack on top of each other, making it important to decide amongst the trade-offs). The compiler was for a language called C0, which is essentially C with memory safety and no undefined behavior. The project encompasses everything from lexing the source file (with support for header files), parsing lexical tokens, semantic analysis, and code generation in x86 assembly. This project is written in Rust, with `logos` lexer generator library and `LALRPOP` parser generator library. 
+
+There are multiple challenges I faced as the project progressed. One of the major ones was embracing the functional programming paradigm, given I have almost always been an imperative programmer. Though it is possible to do it in an imperative manner, the results are horrendously inefficient - an example for this is the scope checker part of the semantic analyzer.Thus the project requires me to learn functional patterns (and Rust), while working on a very tight schedule. One more challenge is resolving grammar ambiguities like the dangling else problem. Also, since the language is not context-free, it requires a workaround like the “lexer hack” or backtracking for removing ambiguity.
+The next great challenge, I presume, is going to be the implementation of Static Single Assignment (SSA) form for even more optimizations. I am currently reading research papers and notes around this topic to understand how to go about this.
+This project is done in teams of two. The roles are not fixed, but I am mostly working on the grammar of the language, lexer and parser, the semantic analysis, and abstract assembly generation - this includes optimizations like constant folding, instruction selection to reduce the number of moves and memory operations, and register allocation using graph coloring and maximum cardinality search.
+What makes this project special is self evident - compilers are usually a black box for most computer engineers, and implementing one is a challenging learning experience for someone with very limited knowledge of functional programming. Demystifying compilers by completely implementing one is liberating, to say the least.
