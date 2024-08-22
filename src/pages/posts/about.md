@@ -25,7 +25,7 @@ During the summer of 2024, I worked as an Embedded Software Engineer Intern at [
 
 ## Projects
 ### > C0 Compiler with compiler optimizations
-__Language(s)__: Rust\
+__Language(s)__: Rust
 
 A compiler for C0, an unambiguous and memory-safe subset of the C language designed at Carnegie Mellon University. The implementation involves lexing, parsing and elaboration, type and scope checking, intermediate representations, instruction selection and conversion to x86 assembly and LLVM IR, with various compiler optimizations. Used Rust to architect and implement the entire project.
 
