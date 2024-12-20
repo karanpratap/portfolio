@@ -43,7 +43,7 @@
 <p>A virtual machine runtime for WebAssembly, supporting interpretation of a subset of WASM opcodes. Devised a custom ABI for Just-in-time (JIT) compilation of WASM bytecode and native x86-64 assembly execution. Also supported dynamic profiling for the runtime using probes (cache, memory and instruction profiling).</p>
 <h3 id="-tcp-reno-congestion-control-protocol">> TCP Reno congestion control Protocol</h3>
 <p><strong>Language(s)</strong>: C</p>
-<p>Implemented TCP Reno congestion control algorithm with fast-recovery and out-of-order packet handling.</p>
+<p>Implemented reliability and in-order byte stream abstraction over UDP sockets. Implemented 3-way handshake, windowing, and Reno-based congestion control, supporting fast recovery and out-of-order packet handling from scratch. Ran experiments under varying network conditions (bandwidth and delay) to transfer files of varying sizes, and observed sawtooth graph for the congestion window.</p>
 <h3 id="-multi-threaded-caching-web-proxy">> Multi-threaded Caching Web Proxy</h3>
 <p><strong>Language(s)</strong>: C</p>
 <p>Implemented Multi-Threaded web proxy server that handles concurrent clients and services HTTP/1.0 requests for static web pages. Added LRU caching to handle repeated requests to web objects faster.</p>

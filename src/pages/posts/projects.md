@@ -51,7 +51,7 @@ A virtual machine runtime for WebAssembly, supporting interpretation of a subset
 ### > TCP Reno congestion control Protocol
 __Language(s)__: C
 
-Implemented TCP Reno congestion control algorithm with fast-recovery and out-of-order packet handling.
+Implemented reliability and in-order byte stream abstraction over UDP sockets. Implemented 3-way handshake, windowing, and Reno-based congestion control, supporting fast recovery and out-of-order packet handling from scratch. Ran experiments under varying network conditions (bandwidth and delay) to transfer files of varying sizes, and observed sawtooth graph for the congestion window.
 
 ### > Multi-threaded Caching Web Proxy
 __Language(s)__: C
