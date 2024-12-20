@@ -11,7 +11,15 @@ image:
 tags: ["project", "compiler", "rust"]
 ---
 
-The compiler I am built during the second semester of my master's program is one of the most involved projects I have worked on - and not only because the specification was open to a plethora of design choices (which stack on top of each other, making it important to decide amongst the trade-offs). The compiler was for a language called C0, which is essentially C with memory safety and no undefined behavior. The project encompasses everything from lexing the source file (with support for header files), parsing lexical tokens, semantic analysis, and code generation in x86 assembly. This project is written in Rust, with `logos` lexer generator library and `LALRPOP` parser generator library. 
+### Overview
+
+The compiler I built during the second semester of my master's program is one of the most involved projects I have worked on - and not only because the specification was open to a plethora of design choices with practically zero starter code. These choices stacked on top of each other, making it important to decide amongst the trade-offs associated with each of them and how these impacted the individual components of the compiler, as well as the compiler as a whole. The compiler was for a language called C0, which is essentially C with memory safety and no undefined behavior, excluding some features of C, like type casting and function pointers. The project encompasses everything from lexing the source file (with support for header files), parsing lexical tokens, semantic analysis, code generation in x86 assembly as well as compiler optimizations. This project is written in Rust, with the `logos` lexer generator library and `LALRPOP` parser generator library. 
+
+### The C0 language specification
+
+The c0 language syntax is very similar to C with the exception of how arrays are represented and allocated. The grammar and the operator precedence of the language gives a pretty good idea of the syntactical aspect of the specification.
+
+![c0 grammar](images/c0_grammar.png "Grammar of c0")
 
 There are multiple challenges I faced as the project progressed. One of the major ones was embracing the functional programming paradigm, given I have almost always been an imperative programmer. Though it is possible to do it in an imperative manner, the results are horrendously inefficient - an example for this is the scope checker part of the semantic analyzer.Thus the project requires me to learn functional patterns (and Rust), while working on a very tight schedule. One more challenge is resolving grammar ambiguities like the dangling else problem. Also, since the language is not context-free, it requires a workaround like the “lexer hack” or backtracking for removing ambiguity.
 The next great challenge, I presume, is going to be the implementation of Static Single Assignment (SSA) form for even more optimizations. I am currently reading research papers and notes around this topic to understand how to go about this.
