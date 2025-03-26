@@ -7,7 +7,11 @@ import { AppConfig } from '@/utils/AppConfig';
 import { MarkdownInstance } from 'astro/dist/@types/astro';
 
 export async function getStaticPaths(): Promise<any> {
-	const allPosts = await Astro.glob('../posts/*.md');
+    const posts = await Astro.glob('../posts/*.md');
+    const sphPosts = await Astro.glob('../sph/*.md');
+
+    // Combine posts from both directories
+    const allPosts = [...posts, ...sphPosts];
 
 	const allTags: Set<string> = new Set(
 		allPosts.map((post: MarkdownInstance<Record<string, any>>) => post.frontmatter.tags).flat()
