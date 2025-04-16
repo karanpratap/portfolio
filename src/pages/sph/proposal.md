@@ -63,10 +63,10 @@ If alternatively we fall behind our schedule, we will instead just attempt to im
 We have decided to use CUDA for this project given that SPH is by nature a highly data-parallel application with a large amount of input data. CUDA provides a general purpose interface for programming GPU’s, which are designed for massively data-parallel computations. From earlier in this class, we also have previous experience using CUDA and the Nsight Compute profiler, and so we will have more bandwidth to focus on the actual content of the project rather than expending effort learning new tools.
 
 ### Schedule
-Week 1: March 24 - 31
-Finalize and submit proposal
-Choose parameter values and kernel functions
-Begin scaffolding code 
+__Week 1__: _March 24 - March 31_
+- Finalize and submit proposal
+- Choose parameter values and kernel functions
+- Begin scaffolding code 
 
 __Week 2__: _March 31 - April 7_
 - Finish code infrastructure, particularly visualizer
