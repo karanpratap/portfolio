@@ -33,6 +33,13 @@ A compiler for C0, an unambiguous and memory-safe subset of the C language desig
 - Balanced compilation and execution times using weighted heuristics to determine use/disuse of analysis/transformation passes.
 - Supported LLVM IR as a target to leverage LLVM-based transformations and analyses for further optimized binaries.
 
+### > [Smoothed particle hydrodynamics](../sph/)
+__Language(s)__: CUDA C++
+
+This project includes the implementation of three versions of a smoothed-particle hydrodynamics (SPH) fluid simulation in CUDA, each using a different spatial data structure to accelerate the neighbor search step. The project includes various CUDA-specific optimizations on top of some of these base implementations, utilizing shared memory and precomputed values in constant memory for additional performance. The fastest version is able to render one million particles at approximately 66 frames per second. The simulator can be run with an OpenGL visualizer which renders the position of every particle at each timestep.
+
+For more information on this project, including implementation details of the versions and results, [click here](../sph/).
+
 ### > Real-time embedded kernel and file system
 __Language(s)__: C, ARMv7 assembly
 
@@ -52,6 +59,11 @@ A virtual machine runtime for WebAssembly, supporting interpretation of a subset
 __Language(s)__: C
 
 Implemented reliability and in-order byte stream abstraction over UDP sockets. Implemented 3-way handshake, windowing, and Reno-based congestion control, supporting fast recovery and out-of-order packet handling from scratch. Ran experiments under varying network conditions (bandwidth and delay) to transfer files of varying sizes, and observed sawtooth graph for the congestion window.
+
+### > RAFT Consensus
+__Language(s)__: Go
+
+RAFT is a consensus algorithm used for log consistency and fault tolerance in a distributed system of a given size. The project implements the algorithm as discussed in the extended research paper, "[In search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)". The project implements leader elections, log consistency, and handles various failure scenarios - which include, but are not limited to, faulty or failed leaders, network partitions and delays, and node recovery after failure. Uses a generic RPC library under-the-hood (`remote`), which was also implemented from scratch using go reflection.
 
 ### > Multi-threaded Caching Web Proxy
 __Language(s)__: C
